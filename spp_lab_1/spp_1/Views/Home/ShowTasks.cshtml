@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Show tasks";
+}
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="../../Content/Styles.css" />
+</head>
+<body>
+    <style>
+        body {
+            background: #7aeef9;
+        }
+    </style>
+    <div>
+        <div>
+            <h2>List of tasks</h2>
+        </div>
+
+        <table>
+
+            @foreach (var t in ViewBag.Tasks)
+            {
+                <tr>
+                    <td><p>@t.Id</p></td>
+                    <td><p>@t.Name</p></td>
+                    <td><p>@t.Status</p></td>
+                    <td><p>@t.Date</p></td>
+                    <td><p>@Html.ActionLink("Edit", "EditTask", "Home", new { id = t.Id }, null)</p></td>
+                    <td><p>@Html.ActionLink("Delete", "DeleteTask", "Home", new { id = t.Id }, null)</p></td>
+                </tr>
+            }
+        </table>
+        @Html.ActionLink("Add task", "AddTask", "Home")
+    </div>
+</body>
+

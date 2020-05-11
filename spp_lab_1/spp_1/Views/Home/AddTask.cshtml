@@ -1,0 +1,31 @@
+﻿@model spp_1.Models.Task
+
+@{
+    ViewBag.Title = "Add task";
+}
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="../../Content/AddTask.css" />
+</head>
+
+
+<form  method="post" action="/Home/AddTask">
+    <div class="form-left-decoration"></div>
+    <div class="form-right-decoration"></div>
+    <div class="circle"></div>
+    <div class="form-inner">
+        <input type="hidden" value="@ViewBag.Id" name="Id" />
+        <p>Enter task name</p>
+        <input type="text" name="Name" />
+        <p>Select task status</p>
+        <select name="Status">
+            <option>Plans to start</option>
+            <option>In progress</option>
+            <option>Completed</option>
+        </select>
+        <p>Select date</p>
+        <p><input type="datetime-local" name="Date"></p>
+        <p><input type="submit"></p>
+    </div>
+</form>
+
